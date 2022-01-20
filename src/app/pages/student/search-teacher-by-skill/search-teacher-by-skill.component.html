@@ -1,0 +1,52 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6">
+          <h1>Search Teachers By Skill</h1>
+        </div>
+        <div class="col-md-6" style="text-align:right;">
+          
+            
+           <mat-form-field class="w200" appearance="fill" >
+            <mat-label >Search By skill</mat-label>
+            <input matInput type="text" [(ngModel)]="skill" placeholder="Enter Skll">
+            <button *ngIf="skill" matSuffix mat-icon-button aria-label="Clear" (click)="skill=''">
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <button mat-raised-button style="margin-left: 15px;" (click)="onClick()">Search</button>
+    
+        
+        </div>
+      
+      </div>
+      <div class="row " *ngIf="user">
+        <div class="col-md-4 mt20" *ngFor="let row of user;let i=index ">
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+             {{row}}
+            </mat-card-title>
+           
+       </mat-card-header>
+       <mat-card-content>
+                {{userskills[i]}}
+         </mat-card-content>
+       <mat-card-actions >
+         <button mat-stroked-button color="primary" [routerLink]="'/student/add-message/'+row" >Send Message</button>
+         <button mat-stroked-button color="primary" [routerLink]="'/student/personal-request/'+row" >Send Meeting Request</button>
+        </mat-card-actions>
+      </mat-card>
+       
+       <mat-divider></mat-divider> 
+  
+        </div>
+      </div>
+  
+    </div>
+  
+  
+  </div>
+  
+  
+  

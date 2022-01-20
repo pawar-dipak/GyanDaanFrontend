@@ -1,0 +1,88 @@
+<mat-card>
+  <h1>Create Meeting</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form (ngSubmit)= "formSubmit()" id="form">
+          <!-- Topic -->
+          <mat-form-field class="w100" appearance="fill" >
+            <mat-label >Enter Topic</mat-label>
+            <input [(ngModel)]="meet.tTopic" type="text" name="tTopic"  placeholder="Enter Topic" matInput required/>
+
+          </mat-form-field>
+          <!-- Description -->
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea [(ngModel)]="meet.tDescription" type="text" name="tDescription" placeholder="Description" matInput >
+
+            </textarea>
+
+          </mat-form-field>
+          <!-- Date and time -->
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Date -->
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Date(dd/mm/yyyy)</mat-label>
+                <input [(ngModel)]="meet.tDate" type="text" name="tDate"  placeholder="Date(dd/mm/yyyy)"  matInput required/>
+    
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <!-- time -->
+              <mat-form-field class="w100" appearance="fill">
+                <mat-label>Time</mat-label>
+                <input [(ngModel)]="meet.tTime" type="text" name="tTime" placeholder="Time(e.g 10 am)"  matInput required/>
+    
+              </mat-form-field>
+            </div>
+          </div>
+          <mat-form-field class="w100" appearance="fill">
+            <mat-label>Link</mat-label>
+            <input [(ngModel)]="meet.tLink" type="text" name="tLink"  placeholder="Link"  matInput required/>
+
+          </mat-form-field>
+          <div class="container text-center">
+            <button mat-raised-button color="primary"  type="submit" >Create Meeting</button>
+            <button mat-raised-button color="primary" style="margin-left: 20px;" type="reset">Reset</button>
+            
+          </div>
+
+        </form>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

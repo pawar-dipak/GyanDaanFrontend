@@ -1,0 +1,67 @@
+<mat-card>
+  <h1>Send Message </h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <form (ngSubmit)= "formSubmit()" id="form">
+          <!-- Topic -->
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label>Suject</mat-label>
+            <input  [(ngModel)]="message.mSubject" type="text" name="mSubject"  placeholder="Enter Subject"  matInput required>
+          </mat-form-field>
+
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label>Message</mat-label>
+            <textarea  [(ngModel)]="message.mMessage" type="text" name="mMessage"  placeholder="Messsage"  matInput required></textarea>
+          </mat-form-field>
+
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label>to :-)</mat-label>
+            <input  [(ngModel)]="message.mReplytoUsername" type="text" name="mReplytoUsername"  placeholder="to:(enter username) "  matInput required>
+          </mat-form-field>
+
+
+
+          <div class="container text-center">
+            <button mat-raised-button color="primary"  type="submit" >Send Message</button>
+            <button mat-raised-button color="primary" style="margin-left: 20px;" type="reset">Reset</button>
+            
+          </div>
+
+        </form>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

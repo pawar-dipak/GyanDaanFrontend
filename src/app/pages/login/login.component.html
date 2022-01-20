@@ -1,0 +1,36 @@
+
+
+<!doctype html>
+<html>
+<head>
+<title>Login</title>
+</head>
+<body >
+    <!-- <app-navbar></app-navbar> -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    
+    <div class="testbox" >
+      <h1>Login</h1>
+     
+      <form (ngSubmit)="formSubmit()">
+         <!-- {{loginData|json}} -->
+      <label id="icon" for="name"><i class="icon-envelope "></i></label>
+      <input [(ngModel)]="loginData.username"  type="text" name="username" id="email" placeholder="Email" required/>
+      <label id="icon" for="name"><i class="icon-shield"></i></label>
+      <input [(ngModel)]="loginData.password"  type="password" name="password" id="password" placeholder="Password" required/>
+     
+       <div class="row">
+       <div class="text-center" style="margin-top: -10px;">
+       <button mat-raised-button color="primary" type="submit" >Login</button>
+       <button mat-raised-button color="primary" style="margin-left: 20px;" type="reset">Reset</button>
+       <div style="padding-top: 10px;"><a href="/signup" style="color:maroon;margin-top: 40px;padding-top: 20px;">Not Registered User?? Please SignUp here.</a>
+       </div></div>
+       </div>
+    </form>
+
+    </div>
+
+
+</body>
+</html>

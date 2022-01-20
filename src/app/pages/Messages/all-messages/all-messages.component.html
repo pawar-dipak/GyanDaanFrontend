@@ -1,0 +1,24 @@
+
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <mat-card>
+    <h1 style="margin-top: 10px;">Messages From :- </h1>
+    <div class="row " *ngIf="users">
+      <div class="col-md-4 mt20" *ngFor="let row of users">
+          <mat-card >
+                 
+                  <mat-card-title  >
+                         From -  {{row}}
+                          
+                  </mat-card-title>
+                  <button  mat-raised-button color="primary" [routerLink]="'/'+role+'/allMessages/'+row">Open</button>
+                 
+             
+          </mat-card>
+
+
+        </div>
+  </div>
+</mat-card>
+</div>
+</div>

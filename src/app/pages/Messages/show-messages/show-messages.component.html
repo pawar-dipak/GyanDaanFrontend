@@ -1,0 +1,51 @@
+
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <mat-card>
+        <h1>All Messages</h1>
+        
+        <div *ngFor="let msg of allmsg ; let i = index">
+            <mat-card *ngIf="msg['mUsername']==username" >
+                    <div class="col-md-6 offset-md-6">
+                   
+                    <mat-card-title style="text-align:right;" >
+                            {{msg['mSubject']}}
+                    </mat-card-title>
+                    <mat-card-subtitle style="text-align:right;" >
+                       by &nbsp; {{msg['mUsername']}}<br>
+                       to &nbsp; {{msg['mReplytoUsername']}}
+                    </mat-card-subtitle>
+               
+                    <mat-card-content style="text-align:right;">
+                        <b>{{msg['mMessage']}}</b>
+                    </mat-card-content>
+                    </div>
+                   
+               
+            </mat-card>
+            <mat-card *ngIf="msg['mUsername']!=username">
+                <div class="col-md-6">
+                <mat-card-header>
+                    <mat-card-title>
+                            {{msg['mSubject']}}
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                       by &nbsp; {{msg['mUsername']}}<br>
+                       to &nbsp; {{msg['mReplytoUsername']}}
+                    </mat-card-subtitle>
+                </mat-card-header>
+                    <mat-card-content>
+                        <b>{{msg['mMessage']}}</b>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-stroked-button color="primary" [routerLink]="'/'+role+'/add-message/'+ msg['mUsername']"  >Reply Message</button>
+                    </mat-card-actions>
+                </div>
+            </mat-card>
+
+        
+        <div>
+        
+    </div>
+
+</div>

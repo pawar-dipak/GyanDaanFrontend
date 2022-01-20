@@ -1,0 +1,27 @@
+
+    <mat-toolbar color="primary">
+        <a [routerLink]="" style="color: #f5eff5;">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+          <mat-icon>volunteer_activism_outlined</mat-icon> 
+        </button></a>
+        <a [routerLink]="" style="color: #f5eff5;">
+        <span>GyanDaan</span></a>
+        
+        <span class="example-spacer mr20"></span>
+        <a
+        *ngIf="!login.isLoggedIn()" 
+        [routerLink]="'/login'" style="color:chartreuse;">
+        <button mat-icon-button class="example-icon favorite-icon mr20" aria-label="Example icon-button with heart icon">
+          <mat-icon style="margin-left: -80px;">login</mat-icon>
+        Login/Register</button></a>
+        <a
+        *ngIf="login.isLoggedIn()"
+        (click)="logout()"
+         [routerLink]="'/login'" style="color:chartreuse;">
+          <button mat-icon-button class="example-icon favorite-icon mr20" aria-label="Example icon-button with heart icon">
+            <mat-icon style="margin-left: -60px;">logout</mat-icon>
+          Logout</button></a>
+        
+      </mat-toolbar>
+      
+

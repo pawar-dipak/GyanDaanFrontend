@@ -1,0 +1,44 @@
+<mat-card >
+    <h1 class="mt10">Make Request </h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <form (ngSubmit)= "formSubmit()" id="form">
+            <mat-form-field class="example-chip-list" appearance="fill">
+                <mat-label>Add Skills</mat-label>
+                <mat-chip-list #chipList >
+                  <mat-chip *ngFor="let skill of skills" (removed)="remove(skill)">
+                    {{skill.name}}
+                    <button matChipRemove>
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip>
+                  <input placeholder="New Skill..."
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+              </mat-form-field>
+              
+  
+            
+         
+            <div class="container text-center">
+              <button mat-raised-button color="primary"  type="submit" >Add Skills</button>
+             
+            </div>
+  
+          </form>
+  
+  
+  
+  
+        </div>
+      </div>
+    </div>
+  
+  </mat-card>
+  
+  
+  

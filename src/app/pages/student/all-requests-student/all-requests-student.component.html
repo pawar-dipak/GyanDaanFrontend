@@ -1,0 +1,112 @@
+<div class="bootstrap-wrapper">
+    <div class="container-fluid">
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6">
+          <h1>Your Requests</h1>
+        </div>
+      
+      </div>
+      <div class="row " *ngIf="allreq">
+        <div class="col-md-4 mt20" *ngFor="let row of allreq">
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+             {{row['rTopic']}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               by &nbsp; {{row['rUsername']}}
+            </mat-card-subtitle>
+       </mat-card-header>
+       <mat-card-content>
+       
+         {{row['rDescription']}}
+         <br>
+         <br>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Date -->
+              Preffered Date:- {{row['rDate']}}
+            </div>
+            <div class="col-md-6">
+              <!-- time -->
+              Preffered Time:- {{row['rTime']}}
+            </div>
+          </div>
+          <br>
+          Status  :&nbsp; -&nbsp;
+          {{row['rStatus']}}
+       </mat-card-content>
+       <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onDeleteAllRequest(row['rId'])" >Delete Request</button>
+      </mat-card-actions>
+      
+      </mat-card>
+       
+       <mat-divider></mat-divider> 
+  
+       </div>
+      </div>
+  
+    </div>
+  
+  
+  </div>
+
+  <div class="bootstrap-wrapper">
+    <div class="container-fluid">
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-md-6">
+          <h1>Your Personal Requests</h1>
+        </div>
+      
+      </div>
+      <div class="row " *ngIf="PersonalReq">
+        <div class="col-md-4 mt20" *ngFor="let row of PersonalReq">
+          <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+             {{row['rTopic']}}
+            </mat-card-title>
+            <mat-card-subtitle>
+               to &nbsp; {{row['rTeacherUsername']}}
+            </mat-card-subtitle>
+       </mat-card-header>
+       <mat-card-content>
+       
+         {{row['rDescription']}}
+         <br>
+         <br>
+          <div class="row">
+            <div class="col-md-6">
+              <!-- Date -->
+              Preffered Date:- {{row['rDate']}}
+            </div>
+            <div class="col-md-6">
+              <!-- time -->
+              Preffered Time:- {{row['rTime']}}
+            </div>
+          </div>
+          <br>
+          Status  :&nbsp; -&nbsp;
+          {{row['rStatus']}}
+       </mat-card-content>
+       <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onDeletePersonalRequest(row['rId'])" >Delete Request</button>
+      </mat-card-actions>
+      
+      </mat-card>
+       
+       <mat-divider></mat-divider> 
+  
+       </div>
+      </div>
+  
+    </div>
+  
+  
+  </div>
+  
+  
+  
+  
+  

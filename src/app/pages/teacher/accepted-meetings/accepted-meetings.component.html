@@ -1,0 +1,97 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-md-6">
+        <h1>Accepted Requests</h1>
+      </div>
+      <div class="col-md-6" style="text-align:right;">
+        
+         
+         <mat-form-field class="w200" appearance="fill" >
+          <mat-label >Search By Topic</mat-label>
+          <input matInput type="text" [(ngModel)]="topic" placeholder="Enter Topic">
+          <button *ngIf="topic" matSuffix mat-icon-button aria-label="Clear" (click)="topic=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <button mat-raised-button style="margin-left: 15px;" (click)="onClick()">Search</button>
+  
+      
+      </div>
+    
+    </div>
+    <div class="row " *ngIf="allreq">
+      <div class="col-md-4 mt20" *ngFor="let row of allreq">
+        <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+           {{row['rTopic']}}
+          </mat-card-title>
+          <mat-card-subtitle>
+             by &nbsp; {{row['rUsername']}}
+          </mat-card-subtitle>
+     </mat-card-header>
+     <mat-card-content>
+     
+       {{row['rDescription']}}
+       <br>
+        Status  :&nbsp; -&nbsp;
+        {{row['rStatus']}}
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Date -->
+            Preffered Date:- {{row['rDate']}}
+          </div>
+          <div class="col-md-6">
+            <!-- time -->
+            Preffered Time:- {{row['rTime']}}
+          </div>
+        </div>
+     </mat-card-content>
+     <mat-card-actions>
+        <button mat-stroked-button color="primary" [routerLink]="'/teacher/PersonalMeeting/'+ row['rUsername']"  >Create Meeting</button>
+        <button mat-stroked-button color="primary" [routerLink]="'/teacher/add-message/'+ row['rUsername']"  >Send Message</button>  
+     </mat-card-actions>
+    </mat-card>
+     
+     <mat-divider></mat-divider> 
+
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
